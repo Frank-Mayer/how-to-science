@@ -1,0 +1,22 @@
+# Remind people to all open issues every week
+name: remind to open issues
+
+on:
+  schedule:
+    - cron: "0 5 * * 4" # Thursday at 7am CET
+    - cron: "0 5 * * 1" # Monday at 7am CET
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+
+    steps:
+      - name: Check for open issues
+        uses: actions/stale@v8
+        with:
+          days-before-stale: 0
+          days-before-close: -1
+          stale-issue-message: "There is an open issue in how-to-science!!! @valopaya @Frank-Mayer"
