@@ -3,9 +3,10 @@
 - Anfangsbeispiel
     - Methoden erklären
     - Paperaufbau
+    - Negativbeispiel
 - Konferenz zur Präsentation der Forschungsergebnisse
     - Offen für alle die zuschauen wollen.
-- VP kommen zu fixen Terminan **was heißt VP?**
+- Verschspersonen kommen zu fixen Terminan
 - 4-5 Termine? #9
 - 2-3 Paper pro Gruppe
 
