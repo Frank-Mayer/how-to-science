@@ -3,12 +3,14 @@ import { config } from "dotenv";
 
 config();
 
-if (!process.env.GITHUB_TOKEN) {
+const token = process.env.GITHUB_TOKEN || process.env.PAT;
+
+if (!token) {
   throw new Error("GITHUB_TOKEN is not set");
 }
 
 const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN,
+  auth: token,
 });
 
 // get all collaborators of Frank-Mayer/how-to-science
