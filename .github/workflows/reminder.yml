@@ -14,9 +14,11 @@ jobs:
       pull-requests: write
 
     steps:
-      - name: Check for open issues
-        uses: actions/stale@v8
-        with:
-          days-before-stale: 0
-          days-before-close: -1
-          stale-issue-message: "There is an open issue in how-to-science!!! @valopaya @Frank-Mayer"
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm install
+      - name: Run script
+        run: node ./remind.js
