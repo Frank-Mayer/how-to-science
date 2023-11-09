@@ -2,9 +2,14 @@
 name: remind to open issues
 
 on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/reminder.yml"
   schedule:
     - cron: "0 5 * * 4" # Thursday at 7am CET
     - cron: "0 5 * * 1" # Monday at 7am CET
+  workflow_dispatch:
 
 jobs:
   stale:
@@ -22,3 +27,5 @@ jobs:
         run: npm install
       - name: Run script
         run: node ./remind.js
+        env:
+          PAT: ${{ secrets.PAT }}
